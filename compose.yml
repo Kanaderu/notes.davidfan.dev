@@ -1,11 +1,10 @@
 services:
   amd64:
-    build: dockerfiles/amd64
-    #image: ghcr.io/lildatamonster/docker/openvino_dev:latest
+    #build: dockerfiles/amd64/notes
+    image: ghcr.io/kanaderu/docker/amd64/notes:latest
     privileged: true
     network_mode: host
     working_dir: /app
     user: root
     volumes:
       - ./:/app
-      - /dev/bus/usb:/dev/bus/usb
