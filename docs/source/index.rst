@@ -6,13 +6,24 @@
 David's Notes
 =============
 
+.. #.. include:: notebook1.ipynb
+   #   :parser: myst_parser.sphinx_
+   #
+   #.. include:: notebook2.ipynb
+   #   :parser: myst_parser.sphinx_
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
+   notebook1
+   notebook2
+   md_index
+
 
 
 Indices and tables
+
 ==================
 
 * :ref:`genindex`
