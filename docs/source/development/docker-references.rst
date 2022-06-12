@@ -38,3 +38,12 @@ Purge All Unused or Dangling Images, Containers, Volumes, and Networks
 
     # syntax
     docker system prune -a
+
+```{margin} Look, some margin content!
+On wider screens, this content will pop out to the side!
+```
+
+:::{note}
+:class: margin
+This note will be in the margin!
+:::

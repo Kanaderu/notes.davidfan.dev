@@ -29,8 +29,13 @@ author = 'David Fan'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    "myst_nb"
+    'myst_nb',
+    'sphinx_togglebutton',
+    'sphinxcontrib.bibtex',
+    'sphinx_tabs.tabs',
 ]
+
+bibtex_bibfiles = ['refs.bib']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
