@@ -22,7 +22,8 @@ jobs:
     # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idcontainer
     container:
       image: ghcr.io/kanaderu/docker/amd64/notes:latest
-      options: -v /__w/actions:/app:rw
+      options: -v ${GITHUB_WORKSPACE}/docs:/app:rw	
+#       options: -v /__w/notes.davidfan.dev/notes.davidfan.dev/:/app:rw
 #       volumes:
 #         - $GITHUB_WORKSPACE/docs:/app
     
