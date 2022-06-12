@@ -11,3 +11,5 @@ Docker
 
    docker
    docker-references
+
+   python-references
