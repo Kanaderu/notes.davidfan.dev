@@ -6,7 +6,6 @@ Docker References
     :maxdepth: 2
     :caption: Contents:
 
-
 -------------------------------------
 
 Debugging
@@ -36,14 +35,33 @@ Purge All Unused or Dangling Images, Containers, Volumes, and Networks
 .. code-block:: bash
     :linenos:
 
-    # syntax
+    # remove all dangling docker artifacts
     docker system prune -a
 
-```{margin} Look, some margin content!
-On wider screens, this content will pop out to the side!
-```
+    # remove dangling volumes
+    docker volume prune
 
-:::{note}
-:class: margin
-This note will be in the margin!
-:::
+Remove All Exited Containers
+****************************
+
+.. code-block:: bash
+    :linenos:
+
+    docker rm $(docker ps -a -f status=exited -q)
+
+Stop and Remove All Containers
+******************************
+
+.. code-block:: bash
+    :linenos:
+
+    docker stop $(docker ps -a -q)
+    docker rm $(docker ps -a -q)
+
+Remove All Docker Images
+************************
+
+.. code-block:: bash
+    :linenos:
+    
+    docker rmi $(docker images -a -q)
