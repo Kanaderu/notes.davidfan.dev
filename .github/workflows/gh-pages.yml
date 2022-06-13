@@ -39,8 +39,8 @@ jobs:
         run: |
           echo $GITHUB_WORKSPACE
           ls $GITHUB_WORKSPACE
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          cd docs/
+          make html
       
       - name: Upload a Build Artifacts
         uses: actions/upload-artifact@v3.1.0
