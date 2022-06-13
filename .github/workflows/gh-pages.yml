@@ -28,6 +28,11 @@ jobs:
 #       options: -v /__w/notes.davidfan.dev/notes.davidfan.dev/:/app:rw
 #       volumes:
 #         - $GITHUB_WORKSPACE/docs:/app
+
+    defaults:
+      run:
+        shell: bash
+#         working-directory: scripts
     
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
