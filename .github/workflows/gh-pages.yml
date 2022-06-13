@@ -34,12 +34,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       
-      # Build documentation
+      # Build documentation and disable jekyll
       - name: Build docs 📝
         run: |
           cd $GITHUB_WORKSPACE/docs/
           source /home/dev/py_env/bin/activate
           make html
+          touch build/html/.nojekyll
       
       # Upload Build Artifact
       - name: Upload a Build Artifacts 🎨
