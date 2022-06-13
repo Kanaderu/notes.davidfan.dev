@@ -34,19 +34,21 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       
-      # Runs a set of commands using the runners shell
+      # Build documentation
       - name: Build docs 📝
         run: |
           cd $GITHUB_WORKSPACE/docs/
           source /home/dev/py_env/bin/activate
           make html
       
+      # Upload Build Artifact
       - name: Upload a Build Artifacts 🎨
         uses: actions/upload-artifact@v3.1.0
         with:
           name: docs
           path: docs/build
 
+      # Deploy gh-pages
       - name: Deploy Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
