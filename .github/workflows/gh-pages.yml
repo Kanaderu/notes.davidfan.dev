@@ -40,6 +40,7 @@ jobs:
           echo $GITHUB_WORKSPACE
           ls $GITHUB_WORKSPACE
           cd docs/
+          source /home/dev/py_env/bin/activate
           make html
       
       - name: Upload a Build Artifacts
