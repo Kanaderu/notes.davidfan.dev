@@ -1,0 +1,57 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  gh-pages:
+    runs-on: ubuntu-latest
+    
+    # setup docker image with environment setup
+    # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idcontainer
+    container:
+      image: ghcr.io/kanaderu/docker/amd64/notes:latest
+      options: -u 1001:121
+#       options: -u runner:docker
+
+    # setup bash shell to source python environment
+    defaults:
+      run:
+        shell: bash
+    
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - uses: actions/checkout@v3
+      
+      # Build documentation and disable jekyll
+      - name: Build docs 📝
+        run: |
+          cd $GITHUB_WORKSPACE/docs/
+          source /home/dev/py_env/bin/activate
+          make html
+          touch build/html/.nojekyll
+      
+      # Upload Build Artifact
+      - name: Upload a Build Artifacts 🎨
+        uses: actions/upload-artifact@v3.1.0
+        with:
+          name: docs
+          path: docs/build
+
+      # Deploy gh-pages
+      - name: Deploy Pages 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          branch: gh-pages
+          folder: docs/build/html
