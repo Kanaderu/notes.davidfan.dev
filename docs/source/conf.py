@@ -66,8 +66,11 @@ html_theme_options = {
     "show_navbar_depth": 1,
 }
 
+# branding
 html_title = "David's Notes"
-#html_logo = "path/to/logo.png"
 html_logo = "assets/icon-1.png"
-#html_favicon = "path/to/favicon.ico"
 html_favicon = "assets/favicon.png"
+
+# plotly
+# https://myst-nb.readthedocs.io/en/latest/render/interactive.html
+html_js_files = ["https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"]
