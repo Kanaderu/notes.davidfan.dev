@@ -20,6 +20,7 @@ David's Notes
    notebook2
    md_index
    development/development
+   snn/lif
 
 
 
