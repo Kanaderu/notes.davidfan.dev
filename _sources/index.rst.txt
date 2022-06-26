@@ -22,6 +22,7 @@ David's Notes
    md_index
    development/index
    machine-learning/index
+   applications/index
 
 
 
