@@ -1,8 +1,9 @@
-Spiking Neural Networks
+Applications
 =======================
 
 .. toctree::
    :maxdepth: 1
    :caption: Contents:
 
-   lif
+   sar_backprojection
+   fft
