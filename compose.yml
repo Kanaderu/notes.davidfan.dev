@@ -8,3 +8,14 @@ services:
     user: root
     volumes:
       - ./:/app
+
+  build:
+    #build: dockerfiles/amd64/notes
+    image: ghcr.io/kanaderu/docker/amd64/notes:latest
+    privileged: true
+    network_mode: host
+    working_dir: /app/docs
+    command: make html
+    user: root
+    volumes:
+      - ./:/app

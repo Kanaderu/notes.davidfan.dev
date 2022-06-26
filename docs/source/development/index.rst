@@ -6,7 +6,8 @@ These are a set of references to common development tools that I frequent as wel
 Docker
 
 .. toctree::
-   :maxdepth: 2
+   :hidden:
+   :maxdepth: 1
    :caption: Contents:
 
    docker

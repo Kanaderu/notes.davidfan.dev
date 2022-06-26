@@ -14,13 +14,14 @@ David's Notes
 
 .. toctree::
    :maxdepth: 2
+   :titlesonly:
    :caption: Contents:
 
    notebook1
    notebook2
    md_index
-   development/development
-   snn/lif
+   development/index
+   machine-learning/index
 
 
 
