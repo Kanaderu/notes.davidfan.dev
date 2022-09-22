@@ -1,6 +1,6 @@
 services:
   amd64:
-    #build: dockerfiles/amd64/notes
+    #build: environment/dockerfiles/amd64/notes
     image: ghcr.io/kanaderu/docker/amd64/notes:latest
     privileged: true
     network_mode: host
@@ -10,7 +10,7 @@ services:
       - ./:/app
 
   build:
-    #build: dockerfiles/amd64/notes
+    #build: environment/dockerfiles/amd64/notes
     image: ghcr.io/kanaderu/docker/amd64/notes:latest
     privileged: true
     network_mode: host
